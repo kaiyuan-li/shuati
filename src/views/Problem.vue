@@ -38,13 +38,14 @@ import 'codemirror/theme/eclipse.css'
 import 'codemirror/lib/codemirror.css'
 
 import { EvaluatePython } from '@/api/judger'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Playground',
-
   data () {
     return {
-      code: '',
+      pid: null, // problem ID
+      code: '', // https://vuejs.org/v2/guide/components-props.html#One-Way-Data-Flow
       hasResult: false,
       isEditorDirty: false,
       executedCode: null,
@@ -54,6 +55,7 @@ export default {
         mode: 'python',
         theme: 'eclipse',
         lineNumbers: true,
+        lineWrapping: true,
         line: true
       }
     }
@@ -82,6 +84,16 @@ export default {
       this.code = code
     }
   },
-  components: {}
+
+  computed: {
+    ...mapState(['currentProblem'])
+  },
+
+  created () {
+    this.pid = parseInt(this.$route.params.pid)
+    this.$store.dispatch('fetchProblemByPid', this.pid).then(() => {
+      this.code = `"""\n${this.currentProblem.description}\n"""`
+    })
+  }
 }
 </script>

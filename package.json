@@ -6,12 +6,15 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "emulator": "firebase emulators:start --import firebase_emulator_data",
+    "emulator:exist_on_save": "firebase emulator:start --import firebase_emulator_data --export-on-exit firebase_emulator_data"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "codemirror": "^5.62.0",
     "core-js": "^3.6.5",
+    "firebase": "^8.8.0",
     "vue": "^2.6.11",
     "vue-codemirror": "^4.0.6",
     "vue-router": "^3.2.0",
@@ -19,7 +22,6 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@vue/cli": "^4.5.13",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-cypress": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
