@@ -15,13 +15,10 @@ firebase.initializeApp(firebaseConfig)
 
 const db = firebase.firestore()
 
-// if (window.location.hostname === 'localhost') {
-//   console.log('localhost detected')
-//   db.settings({
-//     host: 'localhost: 8080',
-//     ssl: false
-//   })
-// }
+if (location.hostname === 'localhost') {
+  console.log('localhost detected')
+  db.useEmulator('localhost', 5001) // this is from firebase.json
+}
 
 const problemsCollection = db.collection('problems')
 

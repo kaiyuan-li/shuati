@@ -39,3 +39,29 @@ git merge main
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+## Firestor
+
+### Emulator
+
+To start the emulator with prepopulated data
+
+```
+firebase emulators:start --import firebase_emulator_data
+# or simply
+npm run emulator
+```
+
+To make changes to the emulator data and save it at exit
+
+```
+firebase emulators:start --export-on-exit firebase_emulator_data
+# or simply
+npm run emulator:save_on_exit
+```
+
+To run local host emulator
+```
+npm run build && firebase emulators:start
+```

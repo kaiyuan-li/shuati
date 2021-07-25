@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "emulator": "firebase emulators:start --import firebase_emulator_data",
+    "emulator:exist_on_save": "firebase emulator:start --import firebase_emulator_data --export-on-exit firebase_emulator_data"
   },
   "dependencies": {
     "axios": "^0.21.1",
