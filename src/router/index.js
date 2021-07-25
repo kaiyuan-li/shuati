@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home.vue'
 import Playground from '@/views/Playground.vue'
+import Problem from '@/views/Problem.vue'
+import Problems from '@/views/Problems.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +12,16 @@ const routes = [
     path: '/',
     name: 'Playground',
     component: Playground
+  },
+  {
+    path: '/problems',
+    name: 'Problems',
+    component: Problems
+  },
+  {
+    path: '/problems/:pid',
+    name: 'Problem',
+    component: Problem
   },
   {
     path: '/home',

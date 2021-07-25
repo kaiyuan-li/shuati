@@ -1,4 +1,4 @@
-# cfe
+# Coding Frontend
 
 ## Project setup
 ```
@@ -23,6 +23,18 @@ npm run test:e2e
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Github
+
+#### Update to remote main and sync branch
+
+```
+git checkout main
+git fetch -p origin  # -p prunes branches that not longer exsit
+git merge origin/main
+git checkout <dev-branch>
+git merge main
 ```
 
 ### Customize configuration
